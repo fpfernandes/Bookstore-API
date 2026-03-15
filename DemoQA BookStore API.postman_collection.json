@@ -1,0 +1,964 @@
+{
+  "info": {
+    "_postman_id": "ecfb75d1-03d2-464b-a8d1-867ff6165d77",
+    "name": "DemoQA BookStore API",
+    "description": "Complete collection generated from https://demoqa.com/swagger",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33494575",
+    "_collection_link": "https://go.postman.co/collection/33494575-ecfb75d1-03d2-464b-a8d1-867ff6165d77?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Account",
+      "item": [
+        {
+          "name": "Create User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 201\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201)\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o tempo de resposta é menor que 2300ms\r",
+                  "pm.test(\"Response time is less than 2300ms\", function() {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2300)\r",
+                  "})\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/Account/v1/User",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Account",
+                "v1",
+                "User"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userName\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/Account/v1/User",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Account",
+                    "v1",
+                    "User"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Generate Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// constantes, variaveis e objetos que seram utilizados em comum\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200)\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o tempo de resposta é menor que 2400ms\r",
+                  "pm.test(\"Response time is less than 2400ms\", function() {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2400)\r",
+                  "})\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/Account/v1/GenerateToken",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Account",
+                "v1",
+                "GenerateToken"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Generate Token",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userName\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/Account/v1/GenerateToken",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Account",
+                    "v1",
+                    "GenerateToken"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Authorize",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// constantes, variaveis e objetos que seram utilizados em comum\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200)\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o tempo de resposta é menor que 2100ms\r",
+                  "pm.test(\"Response time is less than 2100ms\", function() {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2100)\r",
+                  "})\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/Account/v1/Authorized",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Account",
+                "v1",
+                "Authorized"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Authorize",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userName\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/Account/v1/Authorized",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Account",
+                    "v1",
+                    "Authorized"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Get User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// constantes, variaveis e objetos que seram utilizados em comum\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200)\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o tempo de resposta é menor que 2300ms\r",
+                  "pm.test(\"Response time is less than 2300ms\", function() {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2300)\r",
+                  "})\r",
+                  "\r",
+                  "// ===============================\r",
+                  "// Teste de Contrato\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// Validar o campo userId\r",
+                  "pm.test(\"Validar campo userID\", function() {\r",
+                  "    pm.expect(jsonData).to.have.property(\"userId\")\r",
+                  "})\r",
+                  "\r",
+                  "// Validar o campo username\r",
+                  "pm.test(\"Validar campo username\", function() {\r",
+                  "    pm.expect(jsonData).to.have.property(\"username\")\r",
+                  "})\r",
+                  "\r",
+                  "//Validar o campo books\r",
+                  "pm.test(\"Validar campo books\", function() {\r",
+                  "\tpm.expect(jsonData).to.have.property(\"books\")\r",
+                  "})\r",
+                  "\r",
+                  "   "
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Account/v1/User/{{userId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Account",
+                "v1",
+                "User",
+                "{{userId}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get User",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Account/v1/User/{{userId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Account",
+                    "v1",
+                    "User",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Delete User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// constantes, variaveis e objetos que seram utilizados em comum\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200)\r",
+                  "})\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Account/v1/User/{{userId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Account",
+                "v1",
+                "User",
+                "{{userId}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete User",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Account/v1/User/{{userId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Account",
+                    "v1",
+                    "User",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BookStore",
+      "item": [
+        {
+          "name": "Get All Books",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// constantes, variaveis e objetos que seram utilizados em comum\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200)\r",
+                  "})"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/BookStore/v1/Books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "BookStore",
+                "v1",
+                "Books"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Books",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/BookStore/v1/Books",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "BookStore",
+                    "v1",
+                    "Books"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Get Book by ISBN",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// constantes, variaveis e objetos que seram utilizados em comum\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 200\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200)\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o tempo de resposta é menor que 2300ms\r",
+                  "pm.test(\"Response time is less than 2300ms\", function() {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2300)\r",
+                  "})\r",
+                  "\r",
+                  "// ===============================\r",
+                  "// Teste de Contrato\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// Validar o campo ISBN\r",
+                  "pm.test(\"Validar campo ISBN\", function() {\r",
+                  "    pm.expect(jsonData).to.have.property(\"isbn\")\r",
+                  "})\r",
+                  "\r",
+                  "// Validar o campo Title\r",
+                  "pm.test(\"Validar campo Title\", function() {\r",
+                  "    pm.expect(jsonData).to.have.property(\"title\")\r",
+                  "})\r",
+                  "\r",
+                  "// Validar o campo subTitle\r",
+                  "pm.test(\"Validar campo subTitle\", function() {\r",
+                  "    pm.expect(jsonData).to.have.property(\"subTitle\")\r",
+                  "})\r",
+                  "\r",
+                  "//Validar o campo author\r",
+                  "pm.test(\"Validar campo author\", function() {\r",
+                  "\tpm.expect(jsonData).to.have.property(\"author\")\r",
+                  "})\r",
+                  "\r",
+                  "// ===============================\r",
+                  "// Teste Funcional\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// Verificar se o campo ISBN é 9781593275846\r",
+                  "pm.test (\"Verificar se o ISBN é 9781593275846\", function () {\r",
+                  "\tpm.expect(jsonData.isbn).to.eql(\"9781593275846\")\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o campo Title é Eloquent JavaScript, Second Edition\r",
+                  "pm.test (\"Verificar se o Title é Eloquent JavaScript, Second Edition\", function () {\r",
+                  "\tpm.expect(jsonData.title).to.eql(\"Eloquent JavaScript, Second Edition\")\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o campo subTitle é A Modern Introduction to Programming\r",
+                  "pm.test (\"Verificar se o subTitle é A Modern Introduction to Programming\", function () {\r",
+                  "\tpm.expect(jsonData.subTitle).to.eql(\"A Modern Introduction to Programming\")\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o campo Author é Marijn Haverbeke\r",
+                  "pm.test (\"Verificar se o Autor é Marijn Haverbeke\", function () {\r",
+                  "\tpm.expect(jsonData.author).to.eql(\"Marijn Haverbeke\")\r",
+                  "})"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/BookStore/v1/Book?ISBN={{isbn}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "BookStore",
+                "v1",
+                "Book"
+              ],
+              "query": [
+                {
+                  "key": "ISBN",
+                  "value": "{{isbn}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Book by ISBN",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/BookStore/v1/Book?ISBN={{isbn}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "BookStore",
+                    "v1",
+                    "Book"
+                  ],
+                  "query": [
+                    {
+                      "key": "ISBN",
+                      "value": "{{isbn}}"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Add Books",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// Funcoes de apoio\r",
+                  "const jsonData = pm.response.json()\r",
+                  "\r",
+                  "// Verificar se o status code é 201\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201)\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o tempo de resposta é menor que 2300ms\r",
+                  "pm.test(\"Response time is less than 2300ms\", function() {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2300)\r",
+                  "})\r",
+                  "\r",
+                  "// ===============================\r",
+                  "// Testes de Contrato\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// Validar o campo Books\r",
+                  "pm.test(\"Validar campo Books\", function() {\r",
+                  "    pm.expect(jsonData).to.have.property(\"books\")\r",
+                  "})\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"{{userId}}\",\n  \"collectionOfIsbns\": [\n    { \"isbn\": \"{{isbn}}\" }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/BookStore/v1/Books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "BookStore",
+                "v1",
+                "Books"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Books",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"{{userId}}\",\n  \"collectionOfIsbns\": [\n    { \"isbn\": \"{{isbn}}\" }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/BookStore/v1/Books",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "BookStore",
+                    "v1",
+                    "Books"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Delete Book",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// ===============================\r",
+                  "// Testes básicos\r",
+                  "// ===============================\r",
+                  "\r",
+                  "// Verificar se o status code é 204\r",
+                  "pm.test(\"Status code is 204\", function (){\r",
+                  "    pm.response.to.have.status(204)\r",
+                  "})\r",
+                  "\r",
+                  "// Verificar se o tempo de resposta é menor que 2300ms\r",
+                  "pm.test(\"Response time is less than 2300ms\", function() {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2300)\r",
+                  "})\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"isbn\": \"{{isbn}}\",\n  \"userId\": \"{{userId}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/BookStore/v1/Book",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "BookStore",
+                "v1",
+                "Book"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Book",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isbn\": \"{{isbn}}\",\n  \"userId\": \"{{userId}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/BookStore/v1/Book",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "BookStore",
+                    "v1",
+                    "Book"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Delete All Books",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/BookStore/v1/Books?UserId={{userId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "BookStore",
+                "v1",
+                "Books"
+              ],
+              "query": [
+                {
+                  "key": "UserId",
+                  "value": "{{userId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete All Books",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/BookStore/v1/Books?UserId={{userId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "BookStore",
+                    "v1",
+                    "Books"
+                  ],
+                  "query": [
+                    {
+                      "key": "UserId",
+                      "value": "{{userId}}"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://demoqa.com"
+    },
+    {
+      "key": "userId",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "isbn",
+      "value": "9781449325862"
+    },
+    {
+      "key": "username",
+      "value": "testuser123"
+    },
+    {
+      "key": "password",
+      "value": "Test@123456"
+    }
+  ]
+}
